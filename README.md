@@ -10,14 +10,14 @@ Register with any email and password to try it — no email verification is requ
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | PHP 8.3+, Laravel 13 |
-| Frontend | React 19, TypeScript, Inertia 3, Tailwind CSS 4 |
-| Database | MySQL 8 |
-| Auth | Laravel Fortify (sessions, 2FA, passkeys) for the web app; Laravel Sanctum tokens for the API |
-| Testing and quality | Pest, PHPStan (Larastan, level 7), Pint, GitHub Actions |
-| Hosting | Laravel Cloud |
+| Layer               | Technology                                                                                    |
+| ------------------- | --------------------------------------------------------------------------------------------- |
+| Backend             | PHP 8.3+, Laravel 13                                                                          |
+| Frontend            | React 19, TypeScript, Inertia 3, Tailwind CSS 4                                               |
+| Database            | MySQL 8                                                                                       |
+| Auth                | Laravel Fortify (sessions, 2FA, passkeys) for the web app; Laravel Sanctum tokens for the API |
+| Testing and quality | Pest, PHPStan (Larastan, level 7), Pint, GitHub Actions                                       |
+| Hosting             | Laravel Cloud                                                                                 |
 
 ## Features
 
@@ -60,13 +60,13 @@ tests/Feature/          Pest tests for the API and the pages
 
 All endpoints are under `/api` and need an `Authorization: Bearer <token>` header.
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET, POST | `/accounts` | List accounts with balances, or create one |
-| GET, PATCH, DELETE | `/accounts/{account}` | Read, update or delete an account |
-| GET, POST | `/accounts/{account}/transactions` | List transactions (25 per page), or add one |
-| GET, PATCH, DELETE | `/transactions/{transaction}` | Read, update or delete a transaction |
-| GET | `/accounts/{account}/summary?month=2026-10` | Totals by category; defaults to the current month |
+| Method             | Endpoint                                    | Purpose                                           |
+| ------------------ | ------------------------------------------- | ------------------------------------------------- |
+| GET, POST          | `/accounts`                                 | List accounts with balances, or create one        |
+| GET, PATCH, DELETE | `/accounts/{account}`                       | Read, update or delete an account                 |
+| GET, POST          | `/accounts/{account}/transactions`          | List transactions (25 per page), or add one       |
+| GET, PATCH, DELETE | `/transactions/{transaction}`               | Read, update or delete a transaction              |
+| GET                | `/accounts/{account}/summary?month=2026-10` | Totals by category; defaults to the current month |
 
 Create a token and call the API locally:
 
