@@ -54,12 +54,12 @@ final class LedgerSummary
             ->get();
 
         // Aggregates come back from MySQL as strings, so cast explicitly.
-        $categories = $rows->map(fn (object $row): CategoryTotal => new CategoryTotal(
+        $categories = array_values($rows->map(fn (object $row): CategoryTotal => new CategoryTotal(
             category: (string) $row->category,
             type: TransactionType::from((string) $row->type),
             totalCents: (int) $row->total_cents,
             count: (int) $row->txn_count,
-        ))->values()->all();
+        ))->all());
 
         $sumOf = fn (TransactionType $type): int => array_sum(array_map(
             fn (CategoryTotal $c): int => $c->type === $type ? $c->totalCents : 0,
